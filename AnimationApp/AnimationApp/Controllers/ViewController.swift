@@ -11,10 +11,13 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var coreAnimationView: UIView!
     @IBOutlet weak var springAnimationView: SpringView!
-    
+
     @IBOutlet weak var coreAnimationBtn: UIButton!
     @IBOutlet weak var springAnimationBtn: SpringButton!
-    
+
+    @IBOutlet weak var typeOfAnimationLbl: UILabel!
+    @IBOutlet weak var paramsOfAnimationLbl: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,34 +25,35 @@ class ViewController: UIViewController {
 
     @IBAction func coreAnimationBtnAction(_ sender: UIButton) {
         sender.pulsate()
-        
+
         UIView.animate(withDuration: 0.2, delay: 2, options: [.autoreverse, .repeat], animations: {
-            self.coreAnimationView.frame.origin.x += 10
-        })
+                self.coreAnimationView.frame.origin.x += 10
+            })
     }
-    
+
     @IBAction func springAnimationBtnAction() {
-        // тип анимации
-        springAnimationView.animation = AnimationType.slideDown.rawValue
-        // анимационная кривая
-        springAnimationView.curve = Curve.easeIn.rawValue
-        // сила
-        springAnimationView.force = 3
-        // продолжительность
-        springAnimationView.duration = 1
-        // задержка
-        springAnimationView.delay = 0.1
+        springAnimationView.animation = AnimationType.random().rawValue
+        springAnimationView.curve = Curve.random().rawValue
         
-        // старт анимции
+        let randomForce = CGFloat(round(Double.random(in: 0...1) * 10) / 10)
+        springAnimationView.force = randomForce
+        
+        let randomDuration = ceil(CGFloat.random(in: 1...3))
+        springAnimationView.duration = randomDuration
+        
+        let randomDelay = CGFloat(round(Double.random(in: 0.1...1) * 10) / 10)
+        springAnimationView.delay = randomDelay
+
         springAnimationView.animate()
 
-        // тип анимации
+        typeOfAnimationLbl.text = "Type of animtion: \(springAnimationView.animation)"
+
+        paramsOfAnimationLbl.text = "force: \(springAnimationView.force), \n duration: \(springAnimationView.duration), \n delay: \(springAnimationView.delay)"
+
         springAnimationBtn.animation = AnimationType.fadeIn.rawValue
-        // анимационная кривая
         springAnimationBtn.curve = Curve.easeOut.rawValue
-        // старт анимции
         springAnimationBtn.animate()
     }
-    
+
 }
 

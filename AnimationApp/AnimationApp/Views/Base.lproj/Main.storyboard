@@ -94,6 +94,18 @@
                                     <action selector="coreAnimationBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kkg-vI-na4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsX-x9-Bsz">
+                                <rect key="frame" x="57" y="525" width="300" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUP-e9-Fmv">
+                                <rect key="frame" x="57" y="582" width="300" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -101,14 +113,20 @@
                             <constraint firstItem="QrD-lR-ZPc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="9i3-Pm-AAu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tYK-aE-R6p" secondAttribute="trailing" constant="87" id="Bj2-VN-dUx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HJW-Fn-3ik" secondAttribute="bottom" constant="77" id="CQ9-Nm-rsD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EsX-x9-Bsz" secondAttribute="trailing" constant="57" id="DFQ-OZ-FKX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Coj-SI-saq" secondAttribute="trailing" constant="87" id="Eix-a5-fhJ"/>
+                            <constraint firstItem="EsX-x9-Bsz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="GdF-8e-Ac8"/>
                             <constraint firstItem="tYK-aE-R6p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="Hku-VH-BU6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HJW-Fn-3ik" secondAttribute="trailing" constant="87" id="LEq-6y-7pb"/>
                             <constraint firstItem="QrD-lR-ZPc" firstAttribute="top" secondItem="Coj-SI-saq" secondAttribute="bottom" constant="51" id="OJU-yZ-V4q"/>
+                            <constraint firstItem="tYK-aE-R6p" firstAttribute="top" secondItem="NUP-e9-Fmv" secondAttribute="bottom" constant="45" id="WS9-sf-xWg"/>
                             <constraint firstItem="Coj-SI-saq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="WXY-9Y-siB"/>
                             <constraint firstItem="HJW-Fn-3ik" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="YWi-dA-CO7"/>
                             <constraint firstItem="HJW-Fn-3ik" firstAttribute="top" secondItem="tYK-aE-R6p" secondAttribute="bottom" constant="62" id="YX2-yH-kgh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NUP-e9-Fmv" secondAttribute="trailing" constant="57" id="awo-d5-0vM"/>
                             <constraint firstItem="Coj-SI-saq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="56" id="e9S-Pn-LFW"/>
+                            <constraint firstItem="NUP-e9-Fmv" firstAttribute="top" secondItem="EsX-x9-Bsz" secondAttribute="bottom" constant="33" id="gYX-X9-PHS"/>
+                            <constraint firstItem="NUP-e9-Fmv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="pQ3-YN-jx7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QrD-lR-ZPc" secondAttribute="trailing" constant="87" id="w5g-ca-h2E"/>
                         </constraints>
                     </view>
@@ -116,8 +134,10 @@
                     <connections>
                         <outlet property="coreAnimationBtn" destination="tYK-aE-R6p" id="MqE-tN-tDP"/>
                         <outlet property="coreAnimationView" destination="Coj-SI-saq" id="REK-ZP-rY6"/>
+                        <outlet property="paramsOfAnimationLbl" destination="NUP-e9-Fmv" id="q4L-ww-nHL"/>
                         <outlet property="springAnimationBtn" destination="HJW-Fn-3ik" id="8fg-aq-a2y"/>
                         <outlet property="springAnimationView" destination="QrD-lR-ZPc" id="dTm-1A-FM1"/>
+                        <outlet property="typeOfAnimationLbl" destination="EsX-x9-Bsz" id="iKz-iF-QGg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
